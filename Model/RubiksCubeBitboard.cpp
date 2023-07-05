@@ -111,7 +111,8 @@ public:
     RubiksCube &u() override {
         this->rotateFace(0);
         uint64_t temp = bitboard[2] & one_24;
-        bitboard[2] = (bitboard[2] & ~one_24) | (bitboard[3] & one_24);
+        bitboard[2] = (bitboard[2] &
+                ) | (bitboard[3] & one_24);
         bitboard[3] = (bitboard[3] & ~one_24) | (bitboard[4] & one_24);
         bitboard[4] = (bitboard[4] & ~one_24) | (bitboard[1] & one_24);
         bitboard[1] = (bitboard[1] & ~one_24) | temp;
